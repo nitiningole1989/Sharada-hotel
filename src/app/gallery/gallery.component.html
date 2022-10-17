@@ -1,0 +1,21 @@
+<section id="gallery" class="gallery section-bg">
+    <div class="container aos-init aos-animate" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>gallery</h2>
+        <p>Check <span>Our Gallery</span></p>
+      </div>
+      <ngb-carousel #carousel [interval]="10000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus" (slide)="onSlide($event)">
+        <ng-template ngbSlide *ngFor="let img of images; index as i">
+          <div class="carousel-caption">
+            <h3>My slide {{i + 1}} title</h3>
+          </div>
+          <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="picsum-img-wrapper">
+              <img [src]="img" width="100%" alt="My image {{i + 1}} description">
+            </div>
+          </a>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </section>
